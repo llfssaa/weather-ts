@@ -1,0 +1,19 @@
+@import '../../../../styles/variables.css';
+
+.thisDay{
+    box-shadow: var(--box-shadow);
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    background: var(--background-color-item);
+    border-radius: 20px;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+
+}

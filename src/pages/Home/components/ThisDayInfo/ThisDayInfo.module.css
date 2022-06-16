@@ -1,0 +1,48 @@
+@import '../../../../styles/variables.css';
+
+.thisDayInfo {
+    position: relative;
+    box-shadow: var(--box-shadow);
+    margin-top: 30px;
+    padding: 40px;
+    max-width: 750px;
+    width: 100%;
+    background: var(--background-color-item);
+    border-radius: 20px;
+}
+.item{
+    position:relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.item:last-child{
+    margin-bottom: 0;
+}
+.id{
+    margin-right: 20px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 1px 4px 10px -1px rgba(71,47,255,0.2);
+    border-radius: 50%;
+}
+.id_name{
+    margin-right: 20px;
+    font-size: 14px;
+    color: var(--subtitle-text-color);
+}
+.id_value{
+    font-size: 14px;
+    color: var(--title-text-color);
+}
+.cloud{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+

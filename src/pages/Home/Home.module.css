@@ -1,0 +1,23 @@
+@import '../../styles/variables.css';
+
+.home{
+    background-color: var(--background-color);
+}
+
+.header{
+    margin: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+
+}
+.headerGroup{
+    display: flex;
+    align-items: center;
+}
+.dayInfoWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
