@@ -40,7 +40,7 @@ const ThisDayInfo = (props:Props) => {
         {
             icon_id: 'wind',
             name: 'Wind',
-            value: Math.round(props.wind) + ' m/s'
+            value: 'Speed: ' + Math.round(props.wind) + ' m/s'
         }
 
     ]

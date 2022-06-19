@@ -1,5 +1,7 @@
 @import '../../styles/variables.css';
 
+
+
 .home{
     background-color: var(--background-color);
 }
@@ -11,6 +13,7 @@
     height: 80px;
 
 }
+
 .headerGroup{
     display: flex;
     align-items: center;
@@ -20,4 +23,22 @@
     justify-content: space-between;
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 600px){
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+
+    .dayInfoWrapper {
+        margin: 10% 10% 0 10% ;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}
+
+
 

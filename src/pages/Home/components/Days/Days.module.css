@@ -1,12 +1,5 @@
 @import '../../../../styles/variables.css';
-.days{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
-    background-color: var(--background-color-item);
-    border-radius: 0 0 20px 20px;
-}
+
 /* Styles for card */
 
 .card{
@@ -153,8 +146,7 @@
 
 }
 
-
-
+    /*ThreeDays styles*/
 .oneDay{
     justify-content: space-around;
     display: flex;
@@ -173,8 +165,89 @@
     background: var(--background-color-card);
     border-radius: 20px;
     transition: 0.6s;
-
     font-size: 20px;
     color: var(--title-text-color);
 
+}
+
+.days{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: var(--background-color-item);
+    border-radius: 0 0 20px 20px;
+}
+
+@media (max-width: 600px){
+
+    /*all card wrapper*/
+
+    .days{
+        padding: 5%;
+        margin-left: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 80%;
+        align-items: flex-start;
+    }
+
+
+    /*today*/
+
+
+    .card_today{
+        height: 30%;
+        margin: 5px;
+        align-self: center;
+        width: 40%;
+
+    }
+    .temp_main{
+        font-size: 20px;
+    }
+
+    /*three day*/
+
+    .mainDay{
+        width: 100%;
+        margin: 5px;
+
+    }
+    .oneDay{
+        padding: 5%;
+    }
+    .daysPart{
+        font-size: 10px;
+    }
+
+    /*five days style*/
+
+    .card{
+        height: 30%;
+        margin: 5px;
+        width: 40%;
+    }
+}
+@media (max-width: 500px){
+
+    /*tabs styles*/
+
+    .tabs_wrapper{
+        margin-left: 10%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tab{
+        margin-bottom: 5px;
+    }
+    .tab:last-child{
+        border-radius: 0 0 10px 10px;
+    }
+}
+@media (max-width: 600px) and (min-width: 500px){
+    .tabs_wrapper{
+        margin-left: 10%;
+    }
 }

@@ -1,5 +1,7 @@
 @import '../../../../styles/variables.css';
 
+
+
 .thisDayInfo {
     position: relative;
     box-shadow: var(--box-shadow);
@@ -45,4 +47,32 @@
     right: 0;
 }
 
+@media screen and (max-width: 600px){
+
+    .cloud{
+        width: 50%;
+    }
+    .item{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .thisDayInfo{
+        width: 100%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        border-radius: 0 0 20px 20px;
+    }
+    .id{
+        width: 35px;
+        height: 35px;
+    }
+
+    .id_name{
+        padding: 5%;
+    }
+    .id_value{
+        padding: 5%;
+    }
+}
 

@@ -1,5 +1,7 @@
 @import '../../../../styles/variables.css';
 
+
+
 .thisDay{
     box-shadow: var(--box-shadow);
     margin-top: 30px;
@@ -15,5 +17,20 @@
     align-items: center;
     width: 100%;
     margin-bottom: 30px;
+
+}
+
+@media  (max-width: 600px){
+    .thisDay{
+        width: 100%;
+        padding: 15px;
+        border-radius: 20px 20px 0 0;
+
+    }
+    .wrapper{
+        width: 100%;
+        margin-bottom: 5%;
+
+    }
 
 }

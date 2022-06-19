@@ -86,7 +86,7 @@ const Days = (props:any): any =>{
     switch(tabs){
         case "Today":{
             return (
-                <div>
+                <div >
                     <Tabs tabChanges={tabChanges}/>
                     <div className={s.days}>
                         {

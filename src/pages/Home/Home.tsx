@@ -12,6 +12,31 @@ import Days from "./components/Days/Days";
 import Preloader from "./components/Preloader";
 import axios from "axios";
 import useDebounce from "../../hooks/useDebounce";
+const inputStyle = {
+    width:250,
+    marginLeft:1.5,
+    ['@media (max-width:600px)'] : {
+        marginTop: '10px',
+
+    }
+}
+const styleButtonMinWidth = {
+    display: 'none',
+    ['@media (max-width:500px)'] : {
+        display:'block',
+        paddingLeft:'65%'
+    }
+}
+const styleButton = {
+    marginLeft:10,
+    ['@media (max-width:500px)'] : {
+        display: 'none',
+    },
+    ['@media (max-width: 600px) and (min-width: 500px)'] : {
+        paddingLeft: '10%'
+    }
+
+}
 
 const options = {
     method: 'GET',
@@ -45,10 +70,18 @@ interface Props{
 
 
 function Home(props:Props) {
+    const {theme, setTheme} = useTheme();
     const city:Array<any> = [];
     const [cities, setCities] = useState([])
     const [value, setValue] = useState('')
     const searchValue = useDebounce(value, 600);
+
+    let handleTheme = () => {
+        (theme === "light") ? setTheme("dark") : setTheme("light");
+    }
+
+    let wt = props.data && JSON.parse(props.data);
+
     useEffect(()=>{
         axios.request(setOptions(searchValue)).then(function (res) {
             setCities(res.data.map((el:any)=>{
@@ -57,22 +90,9 @@ function Home(props:Props) {
         })
     },[searchValue])
 
-     cities.forEach((el:any)=>{
-        //city.push({['label'] : el })
-         city.push({label: el});
+    cities.forEach((el:any)=>{
+        city.push({label: el});
     })
-
-    console.log(city);
-
-    const {theme, setTheme} = useTheme();
-    let handleTheme = () => {
-        (theme === "light") ? setTheme("dark") : setTheme("light");
-    }
-    let wt = props.data && JSON.parse(props.data);
-
-
-
-    console.log(value)
 
     return(
         (wt) ?
@@ -82,11 +102,17 @@ function Home(props:Props) {
                     <div><GlobalSvgSelector id='header-logo'/></div>
                     <div style={{lineHeight: '30px',fontSize:25, marginLeft:15,
                         color:'#4793FF', fontWeight:'bold'}}>Weather</div>
+                    <Box sx={styleButtonMinWidth} onClick={handleTheme}>
+                        {theme === 'dark' ?   <LightModeIcon sx={{color:
+                                    'var(--theme-button-color)'}}/>
+                            : <NightlightIcon sx={{color:
+                                    'var(--theme-button-color)'}}/>}
+                    </Box>
                 </div>
                 
                 <div className={s.headerGroup}>
 
-                    <Box sx={{ width:250, marginLeft:1.5,}}>
+                    <Box sx={inputStyle}>
                         <Autocomplete
                             disablePortal
                             id="combo-box-demo"
@@ -105,7 +131,7 @@ function Home(props:Props) {
                                 label='Select city' /> }}
                         />
                     </Box>
-                    <Box sx={{marginLeft:10}} onClick={handleTheme}>
+                    <Box sx={styleButton} onClick={handleTheme}>
                         {theme === 'dark' ?   <LightModeIcon sx={{color:
                                                 'var(--theme-button-color)'}}/>
                                                 : <NightlightIcon sx={{color:
